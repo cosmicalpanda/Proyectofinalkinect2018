@@ -1,0 +1,180 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
+using System.Windows.Shapes;
+using System.Windows.Threading;
+
+namespace _1._5_Ejemplo_mover_figura_con_flechas
+{
+    /// <summary>
+    /// Interaction logic for MainWindow.xaml
+    /// </summary>
+    public partial class MainWindow : Window
+    {
+        int iPixeles = 1, iPixelesc = 20;
+        double dPosXc, dPosYc, dPosXm, dPosYm, dAnchoCanvas, dAltoCanvas;
+
+        DispatcherTimer timer;
+
+        struct Objeto
+        {
+            public double dPosX;
+            public double dPosY;
+            public double dAncho;
+            public double dAlto;
+        }
+        Objeto carl,p1,p2,p3;
+
+        public MainWindow()
+        {
+            InitializeComponent();
+            MainCanvas.Focusable = true;
+            MainCanvas.Focus();
+
+            dAnchoCanvas = MainCanvas.Width;
+            dAltoCanvas = MainCanvas.Height;
+
+            
+
+            timer = new DispatcherTimer();
+            timer.Interval = new TimeSpan(0,0,0,0,10);
+            timer.Tick += new EventHandler(Timer_Tick);
+            timer.IsEnabled = true;
+            /////////////////////////////////////////////////////////objetos
+            dPosXm = (double)mapa.GetValue(Canvas.LeftProperty);
+            dPosYm = (double)mapa.GetValue(Canvas.TopProperty);
+
+            p1.dPosX = (double)pared1.GetValue(Canvas.LeftProperty);
+            p1.dPosY = (double)pared1.GetValue(Canvas.TopProperty);
+            p1.dAncho = pared1.Width;
+            p1.dAlto = pared1.Height;
+
+
+            p2.dPosX = (double)pared2.GetValue(Canvas.LeftProperty);
+            p2.dPosY = (double)pared2.GetValue(Canvas.TopProperty);
+            p2.dAncho = pared2.Width;
+            p2.dAlto = pared2.Height;
+
+            p3.dPosX = (double)pared3.GetValue(Canvas.LeftProperty);
+            p3.dPosY = (double)pared3.GetValue(Canvas.TopProperty);
+            p3.dAncho = pared3.Width;
+            p3.dAlto = pared3.Height;
+
+            carl.dPosX = (double)carlitos.GetValue(Canvas.LeftProperty);
+            carl.dPosY = (double)carlitos.GetValue(Canvas.TopProperty);
+            carl.dAncho = carlitos.Width;
+            carl.dAlto = carlitos.Height;
+            ///////////////////////////////////////////////////////////objetos
+
+
+
+        }
+        private void MainCanvas_KeyDown(object sender, KeyEventArgs e)
+        {
+             dPosXc = (double)circulo.GetValue(Canvas.LeftProperty);
+             dPosYc = (double)circulo.GetValue(Canvas.TopProperty);
+
+            switch (e.Key)
+            {
+                case Key.Left:
+                        dPosXc -= iPixelesc;
+                    break;
+
+                case Key.Right:
+                        dPosXc += iPixelesc;
+                    break;
+                case Key.Up:
+                        dPosYc -= iPixelesc;
+                    break;
+
+                case Key.Down:
+                        dPosYc += iPixelesc;
+                    break;
+            }
+            
+            circulo.SetValue(Canvas.LeftProperty, dPosXc);
+            circulo.SetValue(Canvas.TopProperty, dPosYc);
+
+        }
+        private void Movimiento_Mapa()
+        {
+
+           
+                if (dPosXc < dAnchoCanvas / 3)
+                {
+                    dPosXm += iPixeles;
+                p1.dPosX += iPixeles;
+                p2.dPosX += iPixeles;
+                p3.dPosX += iPixeles;
+            }
+            else if (dPosXc > 2 * dAnchoCanvas / 3)  
+                {
+                    dPosXm -= iPixeles;
+                p1.dPosX -= iPixeles;
+                p2.dPosX -= iPixeles;
+                p3.dPosX -= iPixeles;
+            }
+
+
+            if (dPosYc < dAltoCanvas / 3)
+                {
+                    dPosYm += iPixeles;
+                p1.dPosY += iPixeles;
+                p2.dPosY += iPixeles;
+                p3.dPosY += iPixeles;
+            }
+            else if (dPosYc > 2 * dAltoCanvas / 3)
+                {
+                    dPosYm -= iPixeles;
+                p1.dPosY -= iPixeles;
+                p2.dPosY -= iPixeles;
+                p3.dPosY -= iPixeles;
+            }
+
+            if ((!Colision(p1, carl))&&(!Colision(p2, carl)))
+            
+            {
+                if (!Colision(p3, carl))
+                { 
+                    mapa.SetValue(Canvas.LeftProperty, dPosXm);
+                pared1.SetValue(Canvas.LeftProperty, p1.dPosX);
+                pared2.SetValue(Canvas.LeftProperty, p2.dPosX);
+                pared3.SetValue(Canvas.LeftProperty, p3.dPosX);
+
+                mapa.SetValue(Canvas.TopProperty, dPosYm);
+                pared1.SetValue(Canvas.TopProperty, p1.dPosY);
+                pared2.SetValue(Canvas.TopProperty, p2.dPosY);
+                pared3.SetValue(Canvas.TopProperty, p3.dPosY);
+                }
+            }
+          
+
+        }
+        private void Timer_Tick(object sender, EventArgs e)
+        {
+            Movimiento_Mapa();
+        }
+        private bool Colision(Objeto obst, Objeto personaje)
+        {
+            if (obst.dPosX + obst.dAncho < personaje.dPosX)
+                return false;
+            if (obst.dPosY + obst.dAlto < personaje.dPosY)
+                return false;
+            if (obst.dPosY > personaje.dPosY + personaje.dAlto)
+                return false;
+            if (obst.dPosX > personaje.dPosX + personaje.dAncho)
+                return false;
+            return true;
+        }
+    }
+}
