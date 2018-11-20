@@ -10,20 +10,36 @@
         <Canvas x:Name="MainCanvas" Width="300" Height="250" KeyDown="MainCanvas_KeyDown" Background="#FFF2F3F3" Margin="48,35,67.667,37.667">
             <Image x:Name="mapa" Height="481" Canvas.Left="-132" Width="550" Source="pista.jpg" Canvas.Top="-121"/>
             <Rectangle Fill="#7FE83800" Height="100" Canvas.Left="100" Canvas.Top="84" Width="100"/>
-            <Rectangle x:Name="pared1" Fill="#FFE8CC00" Height="68" Width="21" Canvas.Left="10" Canvas.Top="158"/>
-            <Rectangle x:Name="pared2" Fill="#FFE8CC00" Height="68" Width="21" Canvas.Left="246" Canvas.Top="84"/>
-            <Rectangle x:Name="pared3" Fill="#FFE8CC00" Height="21" Width="68" Canvas.Left="125" Canvas.Top="205"/>
-            <Rectangle x:Name="pared4" Fill="#FFE8CC00" Height="21" Width="68" Canvas.Left="10" Canvas.Top="29"/>
-            <Rectangle x:Name="pared5" Fill="#FFE8CC00" Height="68" Width="21" Canvas.Left="246" Canvas.Top="206"/>
-            <Rectangle x:Name="pared6" Fill="#FFE8CC00" Height="68" Width="21" Canvas.Left="154" Canvas.Top="-18"/>
-            <Rectangle x:Name="pared7" Fill="#FFE8CC00" Height="68" Width="21" Canvas.Left="-51" Canvas.Top="179"/>
-            <Rectangle x:Name="pared8" Fill="#FFE8CC00" Height="68" Width="21" Canvas.Left="-97" Canvas.Top="-18"/>
-            <Rectangle x:Name="pared9" Fill="#FFE8CC00" Height="68" Width="21" Canvas.Left="316" Canvas.Top="10"/>
-            <Rectangle x:Name="pared10" Fill="#FFE8CC00" Height="68" Width="21" Canvas.Left="-97" Canvas.Top="100"/>
-            <Rectangle x:Name="pared11" Fill="#FFE8CC00" Height="68" Width="21" Canvas.Left="346" Canvas.Top="179"/>
-            <Rectangle x:Name="pared12" Fill="#FFE8CC00" Height="68" Width="21" Canvas.Left="360" Canvas.Top="78"/>
+            <Rectangle x:Name="pared1" Fill="#FFE8CC00" Height="68" Width="10" Canvas.Left="324" Canvas.Top="46"/>
+            <Rectangle x:Name="pared2" Fill="#FFE8CC00" Height="68" Width="10" Canvas.Left="74" Canvas.Top="116"/>
+            <Rectangle x:Name="pared3" Fill="#FFE8CC00" Height="10" Width="68" Canvas.Left="265" Canvas.Top="37"/>
+            <Rectangle x:Name="pared4" Fill="#FFE8CC00" Height="10" Width="68" Canvas.Left="178" Canvas.Top="116"/>
+            <Rectangle x:Name="pared5" Fill="#FFE8CC00" Height="68" Width="10" Canvas.Left="37" Canvas.Top="-9"/>
+            <Rectangle x:Name="pared6" Fill="#FFE8CC00" Height="68" Width="10" Canvas.Left="100" Canvas.Top="-9"/>
+            <Rectangle x:Name="pared7" Fill="#FFE8CC00" Height="68" Width="10" Canvas.Left="10" Canvas.Top="142"/>
+            <Rectangle x:Name="pared8" Fill="#FFE8CC00" Height="68" Width="10" Canvas.Left="257" Canvas.Top="-21"/>
+            <Rectangle x:Name="pared9" Fill="#FFE8CC00" Height="68" Width="10" Canvas.Left="168" Canvas.Top="58"/>
+            <Rectangle x:Name="pared10" Fill="#FFE8CC00" Height="68" Width="10" Canvas.Left="-54" Canvas.Top="58"/>
+            <Rectangle x:Name="pared11" Fill="#FFE8CC00" Height="68" Width="10" Canvas.Left="265" Canvas.Top="159"/>
+            <Rectangle x:Name="pared12" Fill="#FFE8CC00" Height="68" Width="10" Canvas.Left="142" Canvas.Top="174"/>
+            <Rectangle x:Name="pared13" Fill="#FFE8CC00" Height="10" Width="68" Canvas.Left="100" Canvas.Top="58"/>
+            <Rectangle x:Name="pared14" Fill="#FFE8CC00" Height="10" Width="91" Canvas.Left="-44" Canvas.Top="58"/>
+            <Rectangle x:Name="pared15" Fill="#FFE8CC00" Height="10" Width="68" Canvas.Left="74" Canvas.Top="174"/>
+            <Rectangle x:Name="pared16" Fill="#FFE8CC00" Height="10" Width="91" Canvas.Left="-71" Canvas.Top="200"/>
+            <Rectangle x:Name="pared17" Fill="#FFE8CC00" Height="68" Width="10" Canvas.Left="323" Canvas.Top="116"/>
+            <Rectangle x:Name="pared18" Fill="#FFE8CC00" Height="10" Width="91" Canvas.Left="142" Canvas.Top="242"/>
+            <Rectangle x:Name="pared19" Fill="#FFE8CC00" Height="68" Width="10" Canvas.Left="378" Canvas.Top="184"/>
+            <Rectangle x:Name="pared20" Fill="#FFE8CC00" Height="68" Width="10" Canvas.Left="377" Canvas.Top="116"/>
+            <Rectangle x:Name="pared21" Fill="#FFE8CC00" Height="10" Width="68" Canvas.Left="242" Canvas.Top="242"/>
+            <Rectangle x:Name="pared22" Fill="#FFE8CC00" Height="10" Width="68" Canvas.Left="310" Canvas.Top="242"/>
+            <Rectangle x:Name="pared23" Fill="#FFE8CC00" Height="10" Width="68" Canvas.Left="265" Canvas.Top="-21"/>
+            <Rectangle x:Name="pared24" Fill="#FFE8CC00" Height="10" Width="68" Canvas.Left="82" Canvas.Top="242"/>
+            <Rectangle x:Name="pared25" Fill="#FFE8CC00" Height="10" Width="68" Canvas.Left="9" Canvas.Top="242"/>
+            <Rectangle x:Name="pared26" Fill="#FFE8CC00" Height="10" Width="68" Canvas.Left="246" Canvas.Top="116"/>
+            <Rectangle x:Name="pared27" Fill="#FFE8CC00" Height="10" Width="68" Canvas.Left="-122" Canvas.Top="116"/>
+            <Rectangle x:Name="pared28" Fill="#FFE8CC00" Height="10" Width="68" Canvas.Left="338" Canvas.Top="37"/>
             <Ellipse x:Name="circulo" Height="20" Width="20" Canvas.Left="147" Canvas.Top="126" Fill="#7FE82A00" />
-            <Image x:Name="carlitos" Height="50" Canvas.Left="125" Width="50" Source="barco.png" Canvas.Top="100"/>
+            <Image x:Name="carlitos" Height="25" Canvas.Left="125" Width="25" Source="barco.png" Canvas.Top="100"/>
 
         </Canvas>
     </Grid>
