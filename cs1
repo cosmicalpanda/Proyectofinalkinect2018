@@ -1,20 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using System.Windows.Threading;
-
-namespace _1._5_Ejemplo_mover_figura_con_flechas
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -33,7 +16,7 @@ namespace _1._5_Ejemplo_mover_figura_con_flechas
             public double dAncho;
             public double dAlto;
         }
-        Objeto carl,p1,p2,p3;
+        Objeto carl,p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,p11,p12;
 
         public MainWindow()
         {
@@ -44,10 +27,10 @@ namespace _1._5_Ejemplo_mover_figura_con_flechas
             dAnchoCanvas = MainCanvas.Width;
             dAltoCanvas = MainCanvas.Height;
 
-            
+
 
             timer = new DispatcherTimer();
-            timer.Interval = new TimeSpan(0,0,0,0,10);
+            timer.Interval = new TimeSpan(0, 0, 0, 0, 10);
             timer.Tick += new EventHandler(Timer_Tick);
             timer.IsEnabled = true;
             /////////////////////////////////////////////////////////objetos
@@ -70,6 +53,51 @@ namespace _1._5_Ejemplo_mover_figura_con_flechas
             p3.dAncho = pared3.Width;
             p3.dAlto = pared3.Height;
 
+            p4.dPosX = (double)pared4.GetValue(Canvas.LeftProperty);
+            p4.dPosY = (double)pared4.GetValue(Canvas.TopProperty);
+            p4.dAncho = pared4.Width;
+            p4.dAlto = pared4.Height;
+
+            p5.dPosX = (double)pared5.GetValue(Canvas.LeftProperty);
+            p5.dPosY = (double)pared5.GetValue(Canvas.TopProperty);
+            p5.dAncho = pared5.Width;
+            p5.dAlto = pared5.Height;
+
+            p6.dPosX = (double)pared6.GetValue(Canvas.LeftProperty);
+            p6.dPosY = (double)pared6.GetValue(Canvas.TopProperty);
+            p6.dAncho = pared6.Width;
+            p6.dAlto = pared6.Height;
+
+            p7.dPosX = (double)pared7.GetValue(Canvas.LeftProperty);
+            p7.dPosY = (double)pared7.GetValue(Canvas.TopProperty);
+            p7.dAncho = pared7.Width;
+            p7.dAlto = pared7.Height;
+
+            p8.dPosX = (double)pared8.GetValue(Canvas.LeftProperty);
+            p8.dPosY = (double)pared8.GetValue(Canvas.TopProperty);
+            p8.dAncho = pared8.Width;
+            p8.dAlto = pared8.Height;
+
+            p9.dPosX = (double)pared9.GetValue(Canvas.LeftProperty);
+            p9.dPosY = (double)pared9.GetValue(Canvas.TopProperty);
+            p9.dAncho = pared9.Width;
+            p9.dAlto = pared9.Height;
+
+            p10.dPosX = (double)pared10.GetValue(Canvas.LeftProperty);
+            p10.dPosY = (double)pared10.GetValue(Canvas.TopProperty);
+            p10.dAncho = pared10.Width;
+            p10.dAlto = pared10.Height;
+
+            p11.dPosX = (double)pared11.GetValue(Canvas.LeftProperty);
+            p11.dPosY = (double)pared11.GetValue(Canvas.TopProperty);
+            p11.dAncho = pared11.Width;
+            p11.dAlto = pared11.Height;
+
+            p12.dPosX = (double)pared12.GetValue(Canvas.LeftProperty);
+            p12.dPosY = (double)pared12.GetValue(Canvas.TopProperty);
+            p12.dAncho = pared12.Width;
+            p12.dAlto = pared12.Height;
+
             carl.dPosX = (double)carlitos.GetValue(Canvas.LeftProperty);
             carl.dPosY = (double)carlitos.GetValue(Canvas.TopProperty);
             carl.dAncho = carlitos.Width;
@@ -81,27 +109,27 @@ namespace _1._5_Ejemplo_mover_figura_con_flechas
         }
         private void MainCanvas_KeyDown(object sender, KeyEventArgs e)
         {
-             dPosXc = (double)circulo.GetValue(Canvas.LeftProperty);
-             dPosYc = (double)circulo.GetValue(Canvas.TopProperty);
+            dPosXc = (double)circulo.GetValue(Canvas.LeftProperty);
+            dPosYc = (double)circulo.GetValue(Canvas.TopProperty);
 
             switch (e.Key)
             {
                 case Key.Left:
-                        dPosXc -= iPixelesc;
+                    dPosXc -= iPixelesc;
                     break;
 
                 case Key.Right:
-                        dPosXc += iPixelesc;
+                    dPosXc += iPixelesc;
                     break;
                 case Key.Up:
-                        dPosYc -= iPixelesc;
+                    dPosYc -= iPixelesc;
                     break;
 
                 case Key.Down:
-                        dPosYc += iPixelesc;
+                    dPosYc += iPixelesc;
                     break;
             }
-            
+
             circulo.SetValue(Canvas.LeftProperty, dPosXc);
             circulo.SetValue(Canvas.TopProperty, dPosYc);
 
@@ -109,57 +137,127 @@ namespace _1._5_Ejemplo_mover_figura_con_flechas
         private void Movimiento_Mapa()
         {
 
-           
-                if (dPosXc < dAnchoCanvas / 3)
-                {
-                    dPosXm += iPixeles;
+
+            if (dPosXc < dAnchoCanvas / 3)
+            {
+                dPosXm += iPixeles;
                 p1.dPosX += iPixeles;
                 p2.dPosX += iPixeles;
                 p3.dPosX += iPixeles;
+                p4.dPosX += iPixeles;
+                p5.dPosX += iPixeles;
+                p6.dPosX += iPixeles;
+                p7.dPosX += iPixeles;
+                p8.dPosX += iPixeles;
+                p9.dPosX += iPixeles;
+                p10.dPosX += iPixeles;
+                p11.dPosX += iPixeles;
+                p12.dPosX += iPixeles;
             }
-            else if (dPosXc > 2 * dAnchoCanvas / 3)  
-                {
-                    dPosXm -= iPixeles;
+            else if (dPosXc > 2 * dAnchoCanvas / 3)
+            {
+                dPosXm -= iPixeles;
                 p1.dPosX -= iPixeles;
                 p2.dPosX -= iPixeles;
                 p3.dPosX -= iPixeles;
+                p4.dPosX -= iPixeles;
+                p5.dPosX -= iPixeles;
+                p6.dPosX -= iPixeles;
+                p7.dPosX -= iPixeles;
+                p8.dPosX -= iPixeles;
+                p9.dPosX -= iPixeles;
+                p10.dPosX -= iPixeles;
+                p11.dPosX -= iPixeles;
+                p12.dPosX -= iPixeles;
             }
 
 
             if (dPosYc < dAltoCanvas / 3)
-                {
-                    dPosYm += iPixeles;
+            {
+                dPosYm += iPixeles;
                 p1.dPosY += iPixeles;
                 p2.dPosY += iPixeles;
                 p3.dPosY += iPixeles;
+                p4.dPosY += iPixeles;
+                p5.dPosY += iPixeles;
+                p6.dPosY += iPixeles;
+                p7.dPosY += iPixeles;
+                p8.dPosY += iPixeles;
+                p9.dPosY += iPixeles;
+                p10.dPosY += iPixeles;
+                p11.dPosY += iPixeles;
+                p12.dPosY += iPixeles;
+
             }
             else if (dPosYc > 2 * dAltoCanvas / 3)
-                {
-                    dPosYm -= iPixeles;
+            {
+                dPosYm -= iPixeles;
                 p1.dPosY -= iPixeles;
                 p2.dPosY -= iPixeles;
                 p3.dPosY -= iPixeles;
+                p4.dPosY -= iPixeles;
+                p5.dPosY -= iPixeles;
+                p6.dPosY -= iPixeles;
+                p7.dPosY -= iPixeles;
+                p8.dPosY -= iPixeles;
+                p9.dPosY -= iPixeles;
+                p10.dPosY -= iPixeles;
+                p11.dPosY -= iPixeles;
+                p12.dPosY -= iPixeles;
             }
 
-            if ((!Colision(p1, carl))&&(!Colision(p2, carl)))
-            
-            {
-                if (!Colision(p3, carl))
-                { 
-                    mapa.SetValue(Canvas.LeftProperty, dPosXm);
-                pared1.SetValue(Canvas.LeftProperty, p1.dPosX);
-                pared2.SetValue(Canvas.LeftProperty, p2.dPosX);
-                pared3.SetValue(Canvas.LeftProperty, p3.dPosX);
+            if ((!Colision(p1, carl)) && (!Colision(p2, carl)))
 
-                mapa.SetValue(Canvas.TopProperty, dPosYm);
-                pared1.SetValue(Canvas.TopProperty, p1.dPosY);
-                pared2.SetValue(Canvas.TopProperty, p2.dPosY);
-                pared3.SetValue(Canvas.TopProperty, p3.dPosY);
+            {
+                if ((!Colision(p3, carl)) && (!Colision(p4, carl)))
+                {
+
+                    if ((!Colision(p5, carl)) && (!Colision(p6, carl)))
+                    {
+                        if ((!Colision(p7, carl)) && (!Colision(p8, carl)))
+                        {
+                            if ((!Colision(p9, carl)) && (!Colision(p10, carl)))
+                            {
+                                if ((!Colision(p11, carl)) && (!Colision(p12, carl)))
+                                {
+                                    mapa.SetValue(Canvas.LeftProperty, dPosXm);
+                                    pared1.SetValue(Canvas.LeftProperty, p1.dPosX);
+                                    pared2.SetValue(Canvas.LeftProperty, p2.dPosX);
+                                    pared3.SetValue(Canvas.LeftProperty, p3.dPosX);
+                                    pared4.SetValue(Canvas.LeftProperty, p4.dPosX);
+                                    pared5.SetValue(Canvas.LeftProperty, p5.dPosX);
+                                    pared6.SetValue(Canvas.LeftProperty, p6.dPosX);
+                                    pared7.SetValue(Canvas.LeftProperty, p7.dPosX);
+                                    pared8.SetValue(Canvas.LeftProperty, p8.dPosX);
+                                    pared9.SetValue(Canvas.LeftProperty, p9.dPosX);
+                                    pared10.SetValue(Canvas.LeftProperty, p10.dPosX);
+                                    pared11.SetValue(Canvas.LeftProperty, p11.dPosX);
+                                    pared12.SetValue(Canvas.LeftProperty, p12.dPosX);
+
+
+                                    mapa.SetValue(Canvas.TopProperty, dPosYm);
+                                    pared1.SetValue(Canvas.TopProperty, p1.dPosY);
+                                    pared2.SetValue(Canvas.TopProperty, p2.dPosY);
+                                    pared3.SetValue(Canvas.TopProperty, p3.dPosY);
+                                    pared4.SetValue(Canvas.TopProperty, p4.dPosY);
+                                    pared5.SetValue(Canvas.TopProperty, p5.dPosY);
+                                    pared6.SetValue(Canvas.TopProperty, p6.dPosY);
+                                    pared7.SetValue(Canvas.TopProperty, p7.dPosY);
+                                    pared8.SetValue(Canvas.TopProperty, p8.dPosY);
+                                    pared9.SetValue(Canvas.TopProperty, p9.dPosY);
+                                    pared10.SetValue(Canvas.TopProperty, p10.dPosY);
+                                    pared11.SetValue(Canvas.TopProperty, p11.dPosY);
+                                    pared12.SetValue(Canvas.TopProperty, p12.dPosY);
+
+                                }
+
+                            }
+                        }
+                    }
                 }
             }
-          
-
         }
+        
         private void Timer_Tick(object sender, EventArgs e)
         {
             Movimiento_Mapa();
