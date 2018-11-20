@@ -16,7 +16,7 @@
             public double dAncho;
             public double dAlto;
         }
-        Objeto carl,p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,p11,p12;
+        Objeto carl,p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,p11,p12,p13,p14,p15,p16,p17,p18,p19,p20,p21,p22,p23,p24,p25,p26,p27,p28;
 
         public MainWindow()
         {
@@ -98,6 +98,87 @@
             p12.dAncho = pared12.Width;
             p12.dAlto = pared12.Height;
 
+            p13.dPosX = (double)pared13.GetValue(Canvas.LeftProperty);
+            p13.dPosY = (double)pared13.GetValue(Canvas.TopProperty);
+            p13.dAncho = pared13.Width;
+            p13.dAlto = pared13.Height;
+
+            p14.dPosX = (double)pared14.GetValue(Canvas.LeftProperty);
+            p14.dPosY = (double)pared14.GetValue(Canvas.TopProperty);
+            p14.dAncho = pared14.Width;
+            p14.dAlto = pared14.Height;
+
+            p15.dPosX = (double)pared15.GetValue(Canvas.LeftProperty);
+            p15.dPosY = (double)pared15.GetValue(Canvas.TopProperty);
+            p15.dAncho = pared15.Width;
+            p15.dAlto = pared15.Height;
+
+            p16.dPosX = (double)pared16.GetValue(Canvas.LeftProperty);
+            p16.dPosY = (double)pared16.GetValue(Canvas.TopProperty);
+            p16.dAncho = pared16.Width;
+            p16.dAlto = pared16.Height;
+
+            p17.dPosX = (double)pared17.GetValue(Canvas.LeftProperty);
+            p17.dPosY = (double)pared17.GetValue(Canvas.TopProperty);
+            p17.dAncho = pared17.Width;
+            p17.dAlto = pared17.Height;
+
+            p18.dPosX = (double)pared18.GetValue(Canvas.LeftProperty);
+            p18.dPosY = (double)pared18.GetValue(Canvas.TopProperty);
+            p18.dAncho = pared18.Width;
+            p18.dAlto = pared18.Height;
+
+            p19.dPosX = (double)pared19.GetValue(Canvas.LeftProperty);
+            p19.dPosY = (double)pared19.GetValue(Canvas.TopProperty);
+            p19.dAncho = pared19.Width;
+            p19.dAlto = pared19.Height;
+
+            p20.dPosX = (double)pared20.GetValue(Canvas.LeftProperty);
+            p20.dPosY = (double)pared20.GetValue(Canvas.TopProperty);
+            p20.dAncho = pared20.Width;
+            p20.dAlto = pared20.Height;
+
+            p21.dPosX = (double)pared21.GetValue(Canvas.LeftProperty);
+            p21.dPosY = (double)pared21.GetValue(Canvas.TopProperty);
+            p21.dAncho = pared21.Width;
+            p21.dAlto = pared21.Height;
+
+            p22.dPosX = (double)pared22.GetValue(Canvas.LeftProperty);
+            p22.dPosY = (double)pared22.GetValue(Canvas.TopProperty);
+            p22.dAncho = pared22.Width;
+            p22.dAlto = pared22.Height;
+
+            p23.dPosX = (double)pared23.GetValue(Canvas.LeftProperty);
+            p23.dPosY = (double)pared23.GetValue(Canvas.TopProperty);
+            p23.dAncho = pared23.Width;
+            p23.dAlto = pared23.Height;
+
+            p24.dPosX = (double)pared24.GetValue(Canvas.LeftProperty);
+            p24.dPosY = (double)pared24.GetValue(Canvas.TopProperty);
+            p24.dAncho = pared24.Width;
+            p24.dAlto = pared24.Height;
+
+            p25.dPosX = (double)pared25.GetValue(Canvas.LeftProperty);
+            p25.dPosY = (double)pared25.GetValue(Canvas.TopProperty);
+            p25.dAncho = pared25.Width;
+            p25.dAlto = pared25.Height;
+
+            p26.dPosX = (double)pared26.GetValue(Canvas.LeftProperty);
+            p26.dPosY = (double)pared26.GetValue(Canvas.TopProperty);
+            p26.dAncho = pared26.Width;
+            p26.dAlto = pared26.Height;
+
+            p27.dPosX = (double)pared27.GetValue(Canvas.LeftProperty);
+            p27.dPosY = (double)pared27.GetValue(Canvas.TopProperty);
+            p27.dAncho = pared27.Width;
+            p27.dAlto = pared27.Height;
+        
+            p28.dPosX = (double)pared28.GetValue(Canvas.LeftProperty);
+            p28.dPosY = (double)pared28.GetValue(Canvas.TopProperty);
+            p28.dAncho = pared28.Width;
+            p28.dAlto = pared28.Height;
+
+
             carl.dPosX = (double)carlitos.GetValue(Canvas.LeftProperty);
             carl.dPosY = (double)carlitos.GetValue(Canvas.TopProperty);
             carl.dAncho = carlitos.Width;
@@ -153,6 +234,23 @@
                 p10.dPosX += iPixeles;
                 p11.dPosX += iPixeles;
                 p12.dPosX += iPixeles;
+                p13.dPosX += iPixeles;
+                p14.dPosX += iPixeles;
+                p15.dPosX += iPixeles;
+                p16.dPosX += iPixeles;
+                p17.dPosX += iPixeles;
+                p18.dPosX += iPixeles;
+                p19.dPosX += iPixeles;
+                p20.dPosX += iPixeles;
+                p21.dPosX += iPixeles;
+                p22.dPosX += iPixeles;
+                p23.dPosX += iPixeles;
+                p24.dPosX += iPixeles;
+                p25.dPosX += iPixeles;
+                p26.dPosX += iPixeles;
+                p27.dPosX += iPixeles;
+                p28.dPosX += iPixeles;
+
             }
             else if (dPosXc > 2 * dAnchoCanvas / 3)
             {
@@ -169,6 +267,22 @@
                 p10.dPosX -= iPixeles;
                 p11.dPosX -= iPixeles;
                 p12.dPosX -= iPixeles;
+                p13.dPosX -= iPixeles;
+                p14.dPosX -= iPixeles;
+                p15.dPosX -= iPixeles;
+                p16.dPosX -= iPixeles;
+                p17.dPosX -= iPixeles;
+                p18.dPosX -= iPixeles;
+                p19.dPosX -= iPixeles;
+                p20.dPosX -= iPixeles;
+                p21.dPosX -= iPixeles;
+                p22.dPosX -= iPixeles;
+                p23.dPosX -= iPixeles;
+                p24.dPosX -= iPixeles;
+                p25.dPosX -= iPixeles;
+                p26.dPosX -= iPixeles;
+                p27.dPosX -= iPixeles;
+                p28.dPosX -= iPixeles;
             }
 
 
@@ -187,7 +301,23 @@
                 p10.dPosY += iPixeles;
                 p11.dPosY += iPixeles;
                 p12.dPosY += iPixeles;
-
+                p13.dPosY += iPixeles;
+                p14.dPosY += iPixeles;
+                p15.dPosY += iPixeles;
+                p16.dPosY += iPixeles;
+                p17.dPosY += iPixeles;
+                p18.dPosY += iPixeles;
+                p19.dPosY += iPixeles;
+                p20.dPosY += iPixeles;
+                p21.dPosY += iPixeles;
+                p22.dPosY += iPixeles;
+                p23.dPosY += iPixeles;
+                p24.dPosY += iPixeles;
+                p25.dPosY += iPixeles;
+                p26.dPosY += iPixeles;
+                p27.dPosY += iPixeles;
+                p28.dPosY += iPixeles;
+               
             }
             else if (dPosYc > 2 * dAltoCanvas / 3)
             {
@@ -204,6 +334,22 @@
                 p10.dPosY -= iPixeles;
                 p11.dPosY -= iPixeles;
                 p12.dPosY -= iPixeles;
+                p13.dPosY -= iPixeles;
+                p14.dPosY -= iPixeles;
+                p15.dPosY -= iPixeles;
+                p16.dPosY -= iPixeles;
+                p17.dPosY -= iPixeles;
+                p18.dPosY -= iPixeles;
+                p19.dPosY -= iPixeles;
+                p20.dPosY -= iPixeles;
+                p21.dPosY -= iPixeles;
+                p22.dPosY -= iPixeles;
+                p23.dPosY -= iPixeles;
+                p24.dPosY -= iPixeles;
+                p25.dPosY -= iPixeles;
+                p26.dPosY -= iPixeles;
+                p27.dPosY -= iPixeles;
+                p28.dPosY -= iPixeles;
             }
 
             if ((!Colision(p1, carl)) && (!Colision(p2, carl)))
@@ -220,44 +366,97 @@
                             {
                                 if ((!Colision(p11, carl)) && (!Colision(p12, carl)))
                                 {
-                                    mapa.SetValue(Canvas.LeftProperty, dPosXm);
-                                    pared1.SetValue(Canvas.LeftProperty, p1.dPosX);
-                                    pared2.SetValue(Canvas.LeftProperty, p2.dPosX);
-                                    pared3.SetValue(Canvas.LeftProperty, p3.dPosX);
-                                    pared4.SetValue(Canvas.LeftProperty, p4.dPosX);
-                                    pared5.SetValue(Canvas.LeftProperty, p5.dPosX);
-                                    pared6.SetValue(Canvas.LeftProperty, p6.dPosX);
-                                    pared7.SetValue(Canvas.LeftProperty, p7.dPosX);
-                                    pared8.SetValue(Canvas.LeftProperty, p8.dPosX);
-                                    pared9.SetValue(Canvas.LeftProperty, p9.dPosX);
-                                    pared10.SetValue(Canvas.LeftProperty, p10.dPosX);
-                                    pared11.SetValue(Canvas.LeftProperty, p11.dPosX);
-                                    pared12.SetValue(Canvas.LeftProperty, p12.dPosX);
+                                    if ((!Colision(p13, carl)) && (!Colision(p14, carl)))
+                                    {
+                                        if ((!Colision(p15, carl)) && (!Colision(p16, carl)))
+                                        {
+                                            if ((!Colision(p17, carl)) && (!Colision(p18, carl)))
+                                            {
+                                                if ((!Colision(p19, carl)) && (!Colision(p20, carl)))
+                                                {
+                                                    if ((!Colision(p21, carl)) && (!Colision(p22, carl)))
+                                                    {
+                                                        if ((!Colision(p23, carl)) && (!Colision(p24, carl)))
+                                                        {
+                                                            if ((!Colision(p25, carl)) && (!Colision(p26, carl)))
+                                                            {
+                                                                if ((!Colision(p27, carl)) && (!Colision(p28, carl)))
+                                                                {
+                                                                    mapa.SetValue(Canvas.LeftProperty, dPosXm);
+                                                                    pared1.SetValue(Canvas.LeftProperty, p1.dPosX);
+                                                                    pared2.SetValue(Canvas.LeftProperty, p2.dPosX);
+                                                                    pared3.SetValue(Canvas.LeftProperty, p3.dPosX);
+                                                                    pared4.SetValue(Canvas.LeftProperty, p4.dPosX);
+                                                                    pared5.SetValue(Canvas.LeftProperty, p5.dPosX);
+                                                                    pared6.SetValue(Canvas.LeftProperty, p6.dPosX);
+                                                                    pared7.SetValue(Canvas.LeftProperty, p7.dPosX);
+                                                                    pared8.SetValue(Canvas.LeftProperty, p8.dPosX);
+                                                                    pared9.SetValue(Canvas.LeftProperty, p9.dPosX);
+                                                                    pared10.SetValue(Canvas.LeftProperty, p10.dPosX);
+                                                                    pared11.SetValue(Canvas.LeftProperty, p11.dPosX);
+                                                                    pared12.SetValue(Canvas.LeftProperty, p12.dPosX);
+                                                                    pared13.SetValue(Canvas.LeftProperty, p13.dPosX);
+                                                                    pared14.SetValue(Canvas.LeftProperty, p14.dPosX);
+                                                                    pared15.SetValue(Canvas.LeftProperty, p15.dPosX);
+                                                                    pared16.SetValue(Canvas.LeftProperty, p16.dPosX);
+                                                                    pared17.SetValue(Canvas.LeftProperty, p17.dPosX);
+                                                                    pared18.SetValue(Canvas.LeftProperty, p18.dPosX);
+                                                                    pared19.SetValue(Canvas.LeftProperty, p19.dPosX);
+                                                                    pared20.SetValue(Canvas.LeftProperty, p20.dPosX);
+                                                                    pared21.SetValue(Canvas.LeftProperty, p21.dPosX);
+                                                                    pared22.SetValue(Canvas.LeftProperty, p22.dPosX);
+                                                                    pared23.SetValue(Canvas.LeftProperty, p23.dPosX);
+                                                                    pared24.SetValue(Canvas.LeftProperty, p24.dPosX);
+                                                                    pared25.SetValue(Canvas.LeftProperty, p25.dPosX);
+                                                                    pared26.SetValue(Canvas.LeftProperty, p26.dPosX);
+                                                                    pared27.SetValue(Canvas.LeftProperty, p27.dPosX);
+                                                                    pared28.SetValue(Canvas.LeftProperty, p28.dPosX);
 
+                                                                    mapa.SetValue(Canvas.TopProperty, dPosYm);
+                                                                    pared1.SetValue(Canvas.TopProperty, p1.dPosY);
+                                                                    pared2.SetValue(Canvas.TopProperty, p2.dPosY);
+                                                                    pared3.SetValue(Canvas.TopProperty, p3.dPosY);
+                                                                    pared4.SetValue(Canvas.TopProperty, p4.dPosY);
+                                                                    pared5.SetValue(Canvas.TopProperty, p5.dPosY);
+                                                                    pared6.SetValue(Canvas.TopProperty, p6.dPosY);
+                                                                    pared7.SetValue(Canvas.TopProperty, p7.dPosY);
+                                                                    pared8.SetValue(Canvas.TopProperty, p8.dPosY);
+                                                                    pared9.SetValue(Canvas.TopProperty, p9.dPosY);
+                                                                    pared10.SetValue(Canvas.TopProperty, p10.dPosY);
+                                                                    pared11.SetValue(Canvas.TopProperty, p11.dPosY);
+                                                                    pared12.SetValue(Canvas.TopProperty, p12.dPosY);
+                                                                    pared13.SetValue(Canvas.TopProperty, p13.dPosY);
+                                                                    pared14.SetValue(Canvas.TopProperty, p14.dPosY);
+                                                                    pared15.SetValue(Canvas.TopProperty, p15.dPosY);
+                                                                    pared16.SetValue(Canvas.TopProperty, p16.dPosY);
+                                                                    pared17.SetValue(Canvas.TopProperty, p17.dPosY);
+                                                                    pared18.SetValue(Canvas.TopProperty, p18.dPosY);
+                                                                    pared19.SetValue(Canvas.TopProperty, p19.dPosY);
+                                                                    pared20.SetValue(Canvas.TopProperty, p20.dPosY);
+                                                                    pared21.SetValue(Canvas.TopProperty, p21.dPosY);
+                                                                    pared22.SetValue(Canvas.TopProperty, p22.dPosY);
+                                                                    pared23.SetValue(Canvas.TopProperty, p23.dPosY);
+                                                                    pared24.SetValue(Canvas.TopProperty, p24.dPosY);
+                                                                    pared25.SetValue(Canvas.TopProperty, p25.dPosY);
+                                                                    pared26.SetValue(Canvas.TopProperty, p26.dPosY);
+                                                                    pared27.SetValue(Canvas.TopProperty, p27.dPosY);
+                                                                    pared28.SetValue(Canvas.TopProperty, p28.dPosY);
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
 
-                                    mapa.SetValue(Canvas.TopProperty, dPosYm);
-                                    pared1.SetValue(Canvas.TopProperty, p1.dPosY);
-                                    pared2.SetValue(Canvas.TopProperty, p2.dPosY);
-                                    pared3.SetValue(Canvas.TopProperty, p3.dPosY);
-                                    pared4.SetValue(Canvas.TopProperty, p4.dPosY);
-                                    pared5.SetValue(Canvas.TopProperty, p5.dPosY);
-                                    pared6.SetValue(Canvas.TopProperty, p6.dPosY);
-                                    pared7.SetValue(Canvas.TopProperty, p7.dPosY);
-                                    pared8.SetValue(Canvas.TopProperty, p8.dPosY);
-                                    pared9.SetValue(Canvas.TopProperty, p9.dPosY);
-                                    pared10.SetValue(Canvas.TopProperty, p10.dPosY);
-                                    pared11.SetValue(Canvas.TopProperty, p11.dPosY);
-                                    pared12.SetValue(Canvas.TopProperty, p12.dPosY);
-
+                                    }
                                 }
-
                             }
                         }
                     }
                 }
             }
         }
-        
         private void Timer_Tick(object sender, EventArgs e)
         {
             Movimiento_Mapa();
