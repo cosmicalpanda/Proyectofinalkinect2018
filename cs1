@@ -1,11 +1,28 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
+using System.Windows.Shapes;
+using System.Windows.Threading;
+
+namespace Proyecto_final_simulación_teclas_
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
     {
-        int iPixeles = 1, iPixelesc = 20;
-        double dPosXc, dPosYc, dPosXm, dPosYm, dAnchoCanvas, dAltoCanvas;
+        int iPixeles = 1, iPixelesc = 20,iVida = 100, illaves = 0;
+        double dPosXc, dPosYc, dAnchoCanvas, dAltoCanvas;
 
         DispatcherTimer timer;
 
@@ -16,7 +33,9 @@
             public double dAncho;
             public double dAlto;
         }
-        Objeto carl,p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,p11,p12,p13,p14,p15,p16,p17,p18,p19,p20,p21,p22,p23,p24,p25,p26,p27,p28;
+        Objeto carl, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15, p16, p17, p18, p19, p20, p21, p22, p23, p24, p25, p26, p27, p28,
+            
+            ll1,s;
 
         public MainWindow()
         {
@@ -33,9 +52,11 @@
             timer.Interval = new TimeSpan(0, 0, 0, 0, 10);
             timer.Tick += new EventHandler(Timer_Tick);
             timer.IsEnabled = true;
+
+            contadorllaves.Content = Convert.ToString(illaves) + "/3";
+
             /////////////////////////////////////////////////////////objetos
-            dPosXm = (double)mapa.GetValue(Canvas.LeftProperty);
-            dPosYm = (double)mapa.GetValue(Canvas.TopProperty);
+
 
             p1.dPosX = (double)pared1.GetValue(Canvas.LeftProperty);
             p1.dPosY = (double)pared1.GetValue(Canvas.TopProperty);
@@ -172,12 +193,21 @@
             p27.dPosY = (double)pared27.GetValue(Canvas.TopProperty);
             p27.dAncho = pared27.Width;
             p27.dAlto = pared27.Height;
-        
+
             p28.dPosX = (double)pared28.GetValue(Canvas.LeftProperty);
             p28.dPosY = (double)pared28.GetValue(Canvas.TopProperty);
             p28.dAncho = pared28.Width;
             p28.dAlto = pared28.Height;
 
+            ll1.dPosX = (double)llave1.GetValue(Canvas.LeftProperty);
+            ll1.dPosY = (double)llave1.GetValue(Canvas.TopProperty);
+            ll1.dAncho = llave1.Width;
+            ll1.dAlto = llave1.Height;
+
+            s.dPosX = (double)salida.GetValue(Canvas.LeftProperty);
+            s.dPosY = (double)salida.GetValue(Canvas.TopProperty);
+            s.dAncho = salida.Width;
+            s.dAlto = salida.Height;
 
             carl.dPosX = (double)carlitos.GetValue(Canvas.LeftProperty);
             carl.dPosY = (double)carlitos.GetValue(Canvas.TopProperty);
@@ -219,9 +249,8 @@
         {
 
 
-            if (dPosXc < dAnchoCanvas / 3)
+            if (dPosXc < 125)
             {
-                dPosXm += iPixeles;
                 p1.dPosX += iPixeles;
                 p2.dPosX += iPixeles;
                 p3.dPosX += iPixeles;
@@ -250,11 +279,11 @@
                 p26.dPosX += iPixeles;
                 p27.dPosX += iPixeles;
                 p28.dPosX += iPixeles;
-
+                ll1.dPosX += iPixeles;
+                s.dPosX += iPixeles;
             }
-            else if (dPosXc > 2 * dAnchoCanvas / 3)
+            else if (dPosXc >  153)
             {
-                dPosXm -= iPixeles;
                 p1.dPosX -= iPixeles;
                 p2.dPosX -= iPixeles;
                 p3.dPosX -= iPixeles;
@@ -283,12 +312,13 @@
                 p26.dPosX -= iPixeles;
                 p27.dPosX -= iPixeles;
                 p28.dPosX -= iPixeles;
+                ll1.dPosX -= iPixeles;
+                s.dPosX -= iPixeles;
             }
 
 
-            if (dPosYc < dAltoCanvas / 3)
+            if (dPosYc < 125)
             {
-                dPosYm += iPixeles;
                 p1.dPosY += iPixeles;
                 p2.dPosY += iPixeles;
                 p3.dPosY += iPixeles;
@@ -317,11 +347,12 @@
                 p26.dPosY += iPixeles;
                 p27.dPosY += iPixeles;
                 p28.dPosY += iPixeles;
-               
+                ll1.dPosY += iPixeles;
+                s.dPosY += iPixeles;
+
             }
-            else if (dPosYc > 2 * dAltoCanvas / 3)
+            else if (dPosYc >  153)
             {
-                dPosYm -= iPixeles;
                 p1.dPosY -= iPixeles;
                 p2.dPosY -= iPixeles;
                 p3.dPosY -= iPixeles;
@@ -350,6 +381,8 @@
                 p26.dPosY -= iPixeles;
                 p27.dPosY -= iPixeles;
                 p28.dPosY -= iPixeles;
+                ll1.dPosY -= iPixeles;
+                s.dPosY -= iPixeles;
             }
 
             if ((!Colision(p1, carl)) && (!Colision(p2, carl)))
@@ -364,7 +397,7 @@
                         {
                             if ((!Colision(p9, carl)) && (!Colision(p10, carl)))
                             {
-                                if ((!Colision(p11, carl)) && (!Colision(p12, carl)))
+                                if (!Colision(p11, carl)) 
                                 {
                                     if ((!Colision(p13, carl)) && (!Colision(p14, carl)))
                                     {
@@ -382,7 +415,39 @@
                                                             {
                                                                 if ((!Colision(p27, carl)) && (!Colision(p28, carl)))
                                                                 {
-                                                                    mapa.SetValue(Canvas.LeftProperty, dPosXm);
+                                                                    if (Colision(p12, carl))
+
+                                                                        if (iVida > 0)
+                                                                        {
+                                                                            iVida -= 1;
+                                                                            vidas.Content = iVida;
+                                                                        }
+                                                                        else
+                                                                        {
+                                                                            fondofinal.Visibility = Visibility.Visible;
+                                                                            gameover.Visibility = Visibility.Visible;
+
+                                                                        }
+                                                                    if(Colision(ll1,carl))
+                                                                    {
+
+
+                                                                        illaves += 1;
+
+                                                                        ll1.dPosX = generar(p21.dPosX, p21.dPosX + 480);
+                                                                        ll1.dPosY = generar(p8.dPosY, p8.dPosY + 300);
+
+                                                                        contadorllaves.Content = Convert.ToString(illaves) + "/3";
+                                                                        
+                                                                    }
+                                                                    if (illaves > 2)
+                                                                    {
+                                                                        salida.Visibility = Visibility.Visible;
+                                                                        if (Colision(s, carl))
+                                                                        {
+                                                                            YouWin.Visibility = Visibility.Visible;
+                                                                        }
+                                                                    }
                                                                     pared1.SetValue(Canvas.LeftProperty, p1.dPosX);
                                                                     pared2.SetValue(Canvas.LeftProperty, p2.dPosX);
                                                                     pared3.SetValue(Canvas.LeftProperty, p3.dPosX);
@@ -411,8 +476,9 @@
                                                                     pared26.SetValue(Canvas.LeftProperty, p26.dPosX);
                                                                     pared27.SetValue(Canvas.LeftProperty, p27.dPosX);
                                                                     pared28.SetValue(Canvas.LeftProperty, p28.dPosX);
+                                                                    llave1.SetValue(Canvas.LeftProperty, ll1.dPosX);
+                                                                    salida.SetValue(Canvas.LeftProperty, s.dPosX);
 
-                                                                    mapa.SetValue(Canvas.TopProperty, dPosYm);
                                                                     pared1.SetValue(Canvas.TopProperty, p1.dPosY);
                                                                     pared2.SetValue(Canvas.TopProperty, p2.dPosY);
                                                                     pared3.SetValue(Canvas.TopProperty, p3.dPosY);
@@ -441,6 +507,8 @@
                                                                     pared26.SetValue(Canvas.TopProperty, p26.dPosY);
                                                                     pared27.SetValue(Canvas.TopProperty, p27.dPosY);
                                                                     pared28.SetValue(Canvas.TopProperty, p28.dPosY);
+                                                                    llave1.SetValue(Canvas.TopProperty, ll1.dPosY);
+                                                                    salida.SetValue(Canvas.TopProperty, s.dPosY);
                                                                 }
                                                             }
                                                         }
@@ -457,8 +525,11 @@
                 }
             }
         }
+        
+
         private void Timer_Tick(object sender, EventArgs e)
         {
+
             Movimiento_Mapa();
         }
         private bool Colision(Objeto obst, Objeto personaje)
@@ -473,5 +544,20 @@
                 return false;
             return true;
         }
+        public double generar(double i, double f)
+        {
+            Random random = new Random();
+            double num = random.Next((int)i,(int)f);
+            return num;
+        }
+        private void PosicionarLlaves()
+        {
+            double dPosIXLlave1 = generar(0,25) * 10;
+            double dPosIYLlave1 = generar(0,25) * 10;
+
+            llave1.SetValue(Canvas.LeftProperty, dPosIXLlave1);
+            llave1.SetValue(Canvas.TopProperty, dPosIYLlave1);
+        }
+
     }
 }
