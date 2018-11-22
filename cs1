@@ -552,11 +552,11 @@ namespace Proyecto_final_simulación_teclas_
         }
         private void PosicionarLlaves()
         {
-            double dPosIXLlave1 = generar(0,25) * 10;
-            double dPosIYLlave1 = generar(0,25) * 10;
+            double dPosIXLlave1 = generar(p21.dPosX, p21.dPosX + 480);
+            double dPosIYLlave1 = generar(p8.dPosY, p8.dPosY + 300);
 
-            llave1.SetValue(Canvas.LeftProperty, dPosIXLlave1);
-            llave1.SetValue(Canvas.TopProperty, dPosIYLlave1);
+            ll1.dPosX = dPosIXLlave1;
+            ll1.dPosY = dPosIYLlave1;
         }
 
     }
